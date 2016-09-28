@@ -1,0 +1,31 @@
+<html>
+	<body>
+	
+	<div id = 'AnswerBlank'>
+		<forum>
+			<input type = 'text' id = 'Ans'>
+			<input type = 'button' value = ' ' onclick = 'CheckAns(Ans.value, "a")'>
+		</forum>
+	</div>
+	
+	<div id = 'AnswerBlank'>
+		<forum>
+			<input type = 'text' id = 'Ans'>
+			<input type = 'button' value = ' ' onclick = 'CheckAns(Ans.value, "b")'>
+		</forum>
+	</div>
+	
+	<script type = 'text/javascript'>
+		function CheckAns(ans, cor){
+			if (ans == cor){
+				document.getElementById("AnswerBlank").innerHTML = 
+					"<font color = '#ff0000'><b>" + cor + "<b></font>";			}else{
+				document.getElementById("AnswerBlank").innerHTML = 
+					"<font color = '#ff0000'><b>" + cor + "<b></font>" 
+					+ "<font color = '#0000ff'<b>(" + ans + ")<b></font>";
+			}
+		}
+		
+	</script>
+	</body>
+</html>

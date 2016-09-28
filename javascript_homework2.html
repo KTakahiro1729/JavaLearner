@@ -1,0 +1,29 @@
+<html>
+	<body>
+		
+		<select id = "police">
+			<option value = 0 selected = "selected">おまわりさんがいない</option>
+			<option value = 1> おまわりさんがいる</option>
+		</select>
+		
+		<input type = "text" id = "num">
+		<input type = "button" value = "判断" onclick = 'handan(num.value, police.value)'>
+		<div id = "kekka">ここに結果が表示されます</div>
+		
+		<script type = "text/javascript">
+		function handan(shadanki, poli){
+			if (shadanki < 4){
+				document.getElementById("kekka").innerHTML = "Go";
+			}else{
+				if (poli == 0){
+					document.getElementById("kekka").innerHTML = "Dash";
+				}else if (poli == 1){
+					document.getElementById("kekka").innerHTML = "Stop";
+				}
+			}	
+		}
+		</script>
+		
+		
+	</body>
+</html>
