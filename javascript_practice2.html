@@ -5,17 +5,17 @@
 			document.write(
 			"<forum>",
 			"<input type = 'text' name = 'Ans'>",
-			"<input type = 'button' value = ' ' onclick = 'CheckAns(document.getElementsByName(\"Ans\")[" + num + "].value, \"" + cor + "\"," + num + "  )'>",
+			"<input type = 'button' value = ' ' onclick = 'CheckAns(document.getElementsByName(\"Ans\")[" + num + "].value, \"" + cor + "\"," + num + "  );'>",
 			"</forum>"
 			);
 		}
 		function CheckAns(ans, cor, num){
 			if (ans == cor){
 				document.getElementsByName("AnswerBlank")[num].innerHTML = 
-					"<font color = '#ff0000'><b>" + cor + "<b></font>";
+					"<font color = '#ff0000' name = 'Ans' ><b>" + cor + "</b></font>";
 			}else{
 				document.getElementsByName("AnswerBlank")[num].innerHTML = 
-					"<font color = '#ff0000'><b>" + cor + "<b></font>" + "<font color = '#0000ff'<b>(" + ans + ")<b></font>";
+					"<font color = '#ff0000' name ='Ans'><b>" + cor + "</font>" + "<font color =  '#0000ff'> x(" + ans + ")</b></font>";
 			}
 		}
 		
@@ -24,14 +24,18 @@
 		
 		
 	<body>
-	
-	<div name = 'AnswerBlank'>
+	循環血液の
+	<span name = 'AnswerBlank'>
 		<script type = 'text/javascript'> BeforeAnsForm("a", 0);</script> 
-	</div>
+	</span>
 	
+		<span name = 'AnswerBlank'>
+		<script type = 'text/javascript'> BeforeAnsForm("b", 1);</script> 
+	</span>
 	
-
-	
+		<span name = 'AnswerBlank'>
+		<script type = 'text/javascript'> BeforeAnsForm("c", 2);</script> 
+	</span>
 	
 
 		
