@@ -1,31 +1,41 @@
 <html>
-	<body>
-	
-	<div id = 'AnswerBlank'>
-		<forum>
-			<input type = 'text' id = 'Ans'>
-			<input type = 'button' value = ' ' onclick = 'CheckAns(Ans.value, "a")'>
-		</forum>
-	</div>
-	
-	<div id = 'AnswerBlank'>
-		<forum>
-			<input type = 'text' id = 'Ans'>
-			<input type = 'button' value = ' ' onclick = 'CheckAns(Ans.value, "b")'>
-		</forum>
-	</div>
-	
-	<script type = 'text/javascript'>
-		function CheckAns(ans, cor){
+	<head>
+	<script type = 'text/javascript'>		function BeforeAnsForm(cor, num){
+		
+			document.write(
+			"<forum>",
+			"<input type = 'text' name = 'Ans'>",
+			"<input type = 'button' value = ' ' onclick = 'CheckAns(document.getElementsByName(\"Ans\")[" + num + "].value, \"" + cor + "\"," + num + "  )'>",
+			"</forum>"
+			);
+		}
+		function CheckAns(ans, cor, num){
 			if (ans == cor){
-				document.getElementById("AnswerBlank").innerHTML = 
-					"<font color = '#ff0000'><b>" + cor + "<b></font>";			}else{
-				document.getElementById("AnswerBlank").innerHTML = 
-					"<font color = '#ff0000'><b>" + cor + "<b></font>" 
-					+ "<font color = '#0000ff'<b>(" + ans + ")<b></font>";
+				document.getElementsByName("AnswerBlank")[num].innerHTML = 
+					"<font color = '#ff0000'><b>" + cor + "<b></font>";
+			}else{
+				document.getElementsByName("AnswerBlank")[num].innerHTML = 
+					"<font color = '#ff0000'><b>" + cor + "<b></font>" + "<font color = '#0000ff'<b>(" + ans + ")<b></font>";
 			}
 		}
 		
 	</script>
+		</head>
+		
+		
+	<body>
+	
+	<div name = 'AnswerBlank'>
+		<script type = 'text/javascript'> BeforeAnsForm("a", 0);</script> 
+	</div>
+	
+	
+
+	
+	
+
+		
+	
 	</body>
 </html>
+
