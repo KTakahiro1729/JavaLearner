@@ -1,0 +1,17 @@
+<html>
+<body>
+	<script>
+		function student(_name, _score){
+			this.name = _name;
+			this.score = _score;
+		}
+		var kumi = [];
+		kumi[0] = new student("Taro", 87);
+		kumi[1] = new student("Ichiro", 90);
+		kumi[2] = new student("Hanako", 78);
+		for(var i = 0; i < 3; i++){
+			document.write(kumi[i].name);
+		}
+	</script>
+</body>
+</html>
